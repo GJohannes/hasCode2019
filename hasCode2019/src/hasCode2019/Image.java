@@ -15,6 +15,10 @@ public class Image implements Comparable<Image> {
         this.id = id;
 	}
 
+	public int getId() {
+		return id;
+	}
+
 	public Orientation getOrientation() {
 		return orientation;
 	}

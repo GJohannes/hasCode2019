@@ -59,8 +59,7 @@ public class IOStuff {
 
 	public static void writeFiles(ArrayList<SlideObject>  listOfSlideObjects) throws IOException {
 
-    	String path = "hashCode2019/output/out.txt";
-
+        String path = "hashCode2019/output/out.txt";
 
 		File fout = new File(path);
 		FileOutputStream fos = new FileOutputStream(fout);
@@ -69,10 +68,14 @@ public class IOStuff {
 
 		bw.write(listOfSlideObjects.size());
 
-		for (int i = 0; i < listOfSlideObjects.size(); i++) {
-			bw.newLine();
-			bw.write(listOfSlideObjects.get(i).toString());
-		}
+        for (SlideObject listOfSlideObject : listOfSlideObjects) {
+            bw.newLine();
+            for(Image image: listOfSlideObject.images){
+                bw.write(image.getId());
+                bw.write(" ");
+            }
+
+        }
 
 		bw.close();
 
