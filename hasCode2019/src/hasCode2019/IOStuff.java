@@ -20,4 +20,8 @@ public class IOStuff {
 		}
 		return readAllLines;
 	}
+	
+	public void writeOut() {
+
+	}
 }
