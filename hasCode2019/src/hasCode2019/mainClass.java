@@ -144,7 +144,9 @@ public class mainClass {
 		
 		ArrayList<SlideObject> removedObjects = new ArrayList<>();
 		
-		for (SlideObject slideObject : allSlideObjects) {
+		int i = 0;
+		int listSize = allSlideObjects.size();
+		for (int zaehler = 0; zaehler < listSize; zaehler++) {
 			SlideObject bestMatch = null;
 			int bestScore = -1;
 			for (SlideObject slideObjectToMatch : allSlideObjects) {
@@ -156,9 +158,13 @@ public class mainClass {
 					}					
 				}
 			}
-			System.out.println("---found an match ----");
+			i++;
+			System.out.println("---found an match ----" + i);
 			slideShow.add(bestMatch);
-			removedObjects.add(bestMatch);
+			allSlideObjects.remove(bestScore);
+			listSize = allSlideObjects.size();
+			zaehler = 0;
+//			removedObjects.add(bestMatch);
 //			allSlideObjects.remove(bestMatch);
 		}
 
