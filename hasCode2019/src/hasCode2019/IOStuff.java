@@ -66,6 +66,8 @@ public class IOStuff {
 		File file = new File("newOut");
 		FileWriter fileWriter = new FileWriter(file);
 		BufferedWriter writer = new BufferedWriter(fileWriter);
+		writer.write(Integer.toString((listOfSlideObjects.size())));
+		writer.newLine();	
 		for (int i = 0; i < listOfSlideObjects.size(); i++) {
 			 for(Image image: listOfSlideObjects.get(i).images){
 				 System.out.println(image.getId());
