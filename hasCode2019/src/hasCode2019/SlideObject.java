@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 
 public class SlideObject implements Comparable<SlideObject> {
-    ArrayList<Image> images;
-    ArrayList<String> tags;
+    ArrayList<Image> images = new ArrayList<>();
+    ArrayList<String> tags = new ArrayList<>();
     int numberOfTags;
 
 public SlideObject(Image image){
@@ -15,11 +15,10 @@ public SlideObject(Image image){
 }
     public SlideObject(Image image, Image image2){
         this.images.add(image);
-        this.tags = image.getTags();
-        this.numberOfTags += image.getNumberOfTags();
         this.images.add(image2);
-        this.tags = image2.getTags();
-        this.numberOfTags += image2.getNumberOfTags();
+        this.tags.addAll(image.getTags());
+        this.tags.addAll(image2.getTags());
+        this.numberOfTags = tags.size();
 
     }
 
