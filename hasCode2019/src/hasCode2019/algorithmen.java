@@ -7,7 +7,7 @@ public class algorithmen {
 		return 0;
 	}
 
-	public DifferentAndSameNumberOfTags numberOfDifferentTags(Image image1, Image image2) {
+	public static DifferentAndSameNumberOfTags numberOfDifferentTags(Image image1, Image image2) {
 		int numberOfDifferentTag = 0;
 		int numberOfSameTag = 0;
 		if (image1.getNumberOfTags() > image2.getNumberOfTags()) {

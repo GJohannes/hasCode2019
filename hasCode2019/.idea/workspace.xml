@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4bbbe5cb-cf53-4a09-a350-19e3a397cae4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hasCode2019/IOStuff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hasCode2019/IOStuff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hasCode2019/mainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hasCode2019/mainClass.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/hasCode2019/mainClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+            <state relative-caret-position="479">
+              <caret line="40" column="50" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -35,10 +35,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/hasCode2019/IOStuff.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
+            <state relative-caret-position="254">
               <caret line="23" column="60" selection-start-line="23" selection-start-column="60" selection-end-line="23" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -81,8 +81,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/hasCode2019/Orientation.java" />
-        <option value="$PROJECT_DIR$/src/hasCode2019/mainClass.java" />
         <option value="$PROJECT_DIR$/src/hasCode2019/IOStuff.java" />
+        <option value="$PROJECT_DIR$/src/hasCode2019/mainClass.java" />
       </list>
     </option>
   </component>
@@ -131,7 +131,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551381063271" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551382080388" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -178,7 +178,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1551373676576</updated>
-      <workItem from="1551373682669" duration="3353000" />
+      <workItem from="1551373682669" duration="4184000" />
     </task>
     <task id="LOCAL-00001" summary="Add input reader">
       <created>1551380918481</created>
@@ -187,11 +187,25 @@
       <option name="project" value="LOCAL" />
       <updated>1551380918481</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Removing unused method in IOStuff">
+      <created>1551381053338</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1551381053338</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Removing unused method in IOStuff">
+      <created>1551381068823</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1551381068823</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3353000" />
+    <option name="totallyTimeSpent" value="4184000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="800" extended-state="0" />
@@ -234,7 +248,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add intellij idea stuff" />
     <MESSAGE value="Add input reader" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add input reader" />
+    <MESSAGE value="Removing unused method in IOStuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removing unused method in IOStuff" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -261,16 +276,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hasCode2019/mainClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hasCode2019/Orientation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -280,13 +285,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hasCode2019/IOStuff.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
+        <state relative-caret-position="254">
           <caret line="23" column="60" selection-start-line="23" selection-start-column="60" selection-end-line="23" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#640#648#0" expanded="true" />
             <element signature="e#694#701#0" expanded="true" />
             <element signature="e#1537#1545#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hasCode2019/mainClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="479">
+          <caret line="40" column="50" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

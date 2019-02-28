@@ -1,6 +1,3 @@
 /bin/
 .DS_Store
-
-*.iml
-/.idea
-/out
+workspace.xml
