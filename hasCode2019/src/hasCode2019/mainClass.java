@@ -3,6 +3,7 @@ package hasCode2019;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.reflect.Array;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -28,7 +29,7 @@ public class mainClass {
 
             switch (input) {
                 case "a":
-                    path = Paths.get("hasCode2019/input/a_example.txt");
+                    path = Paths.get("input/a_example.txt");
                     break;
                 case "b":
                     path = Paths.get("hasCode2019/input/b_lovely_landscapes.txt");
@@ -63,39 +64,47 @@ public class mainClass {
 
 	public static void main(String[] args) {
 		System.out.println("standart syso");
-		//System.out.println(IOStuff.loadMainInputFile());
+		
 		readImages();
 		
 		
 		
 		List<Image> ioImages = images;
 		ArrayList<Image> verticalImages = new ArrayList<Image>();
-		
+		ArrayList<SlideObject> allSlideObjects = new ArrayList<>();
 		
 
 		for (Image image : ioImages) {
 			if(image.getOrientation().equals(Orientation.Veritcal)) {			
 				verticalImages.add(image);
+			} else {
+				SlideObject horizontalSlideObject = new SlideObject(image);
+				allSlideObjects.add(horizontalSlideObject);
 			}
 		}
 		
 		
 		Collections.sort(verticalImages);
 		
-		for(int i = 0; i < verticalImages.size(); i++) {
-			Image image = verticalImages.get(i);
+		
+		
+		for(Image image : verticalImages) {
 			Image bestMatch = null;
 			int numberOfDifferentTagsToAnImage = 0;
-			for(int j = 0; j < verticalImages.size(); j++) {
-				DifferentAndSameNumberOfTags numberOfDifferentTags = algorithmen.numberOfDifferentTags(verticalImages.get(i), verticalImages.get(j));
+			for(Image imageToMatch : verticalImages) {
+				DifferentAndSameNumberOfTags numberOfDifferentTags = algorithmen.numberOfDifferentTags(image, imageToMatch);
 				if(numberOfDifferentTags.getNumberOfDifferentTags() > numberOfDifferentTagsToAnImage) {
-					bestMatch = verticalImages.get(j);
+					bestMatch = imageToMatch;
 					numberOfDifferentTagsToAnImage = numberOfDifferentTags.getNumberOfDifferentTags();
 				}
 			}
-			
-			
+			SlideObject slide2Vertical = new SlideObject(image, bestMatch);
+			verticalImages.remove(image);
+			verticalImages.remove(bestMatch);
+			allSlideObjects.add(slide2Vertical);
 		}
+		
+		
 		
 		
 		
