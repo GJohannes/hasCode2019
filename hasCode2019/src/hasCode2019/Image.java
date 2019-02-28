@@ -3,14 +3,16 @@ package hasCode2019;
 import java.util.ArrayList;
 
 public class Image implements Comparable<Image> {
+    private int id;
 	private Orientation orientation;
 	private ArrayList<String> tags;
 	private int numberOfTags;
-	
-	public Image (Orientation orientation, ArrayList<String> tags, int numberOfTags) {
+
+    public Image(Orientation orientation, ArrayList<String> tags, int numberOfTags, int id) {
 		this.orientation = orientation;
 		this.tags= tags;
 		this.numberOfTags = numberOfTags;
+        this.id = id;
 	}
 
 	public Orientation getOrientation() {

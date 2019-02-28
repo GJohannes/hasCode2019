@@ -23,6 +23,7 @@ public class IOStuff {
         int numImages = Integer.parseInt(lines.remove(0));
         System.out.println("Reading " + numImages + " images");
 
+        int counter = 0;
         // Iterate over lines to read images
         for (String line : lines) {
 
@@ -45,7 +46,8 @@ public class IOStuff {
                 tags.add(components[i]);
             }
 
-            images.add(new Image(orientation, tags, numTags));
+            images.add(new Image(orientation, tags, numTags, counter));
+            counter++;
         }
 
         if (images.isEmpty()) {

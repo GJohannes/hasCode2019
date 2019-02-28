@@ -3,7 +3,6 @@ package hasCode2019;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.lang.reflect.Array;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -25,23 +24,37 @@ public class mainClass {
                 System.exit(1);
             }
 
+            System.out.println("Who are you? (c, f, j, s)");
+            String name = br.readLine();
+
+            if (!name.equals("c") && !name.equals("f") && !name.equals("j") && !name.equals("s")) {
+                System.out.println("Invalid input");
+                System.exit(1);
+            }
+
+            String prefix = "";
+
+            if (name.equals("c") || name.equals("f")) {
+                prefix = "hasCode2019/";
+            }
+
             Path path = null;
 
             switch (input) {
                 case "a":
-                    path = Paths.get("input/a_example.txt");
+                    path = Paths.get(prefix + "input/a_example.txt");
                     break;
                 case "b":
-                    path = Paths.get("hasCode2019/input/b_lovely_landscapes.txt");
+                    path = Paths.get(prefix + "input/b_lovely_landscapes.txt");
                     break;
                 case "c":
-                    path = Paths.get("hasCode2019/input/c_memorable_moments.txt");
+                    path = Paths.get(prefix + "input/c_memorable_moments.txt");
                     break;
                 case "d":
-                    path = Paths.get("hasCode2019/input/d_pet_pictures.txt");
+                    path = Paths.get(prefix + "input/d_pet_pictures.txt");
                     break;
                 case "e":
-                    path = Paths.get("hasCode2019/input/e_shiny_selfies.txt");
+                    path = Paths.get(prefix + "input/e_shiny_selfies.txt");
                     break;
                 default:
                     System.out.println("Invalid input");
@@ -64,37 +77,34 @@ public class mainClass {
 
 	public static void main(String[] args) {
 		System.out.println("standart syso");
-		
-		readImages();
-		
-		
-		
-		List<Image> ioImages = images;
+        readImages();
+
+
+        List<Image> ioImages = images;
 		ArrayList<Image> verticalImages = new ArrayList<Image>();
-		ArrayList<SlideObject> allSlideObjects = new ArrayList<>();
+        ArrayList<SlideObject> allSlideObjects = new ArrayList<>();
 		
 
 		for (Image image : ioImages) {
-			if(image.getOrientation().equals(Orientation.Veritcal)) {			
-				verticalImages.add(image);
-			} else {
-				SlideObject horizontalSlideObject = new SlideObject(image);
-				allSlideObjects.add(horizontalSlideObject);
-			}
+            if(image.getOrientation().equals(Orientation.Veritcal)) {
+                verticalImages.add(image);
+            } else {
+                SlideObject horizontalSlideObject = new SlideObject(image);
+                allSlideObjects.add(horizontalSlideObject);
+            }
 		}
 		
 		
 		Collections.sort(verticalImages);
-		
-		
-		
-		for(Image image : verticalImages) {
+
+
+        for (Image image : verticalImages) {
 			Image bestMatch = null;
 			int numberOfDifferentTagsToAnImage = 0;
-			for(Image imageToMatch : verticalImages) {
-				DifferentAndSameNumberOfTags numberOfDifferentTags = algorithmen.numberOfDifferentTags(image, imageToMatch);
+            for (Image imageToMatch : verticalImages) {
+                DifferentAndSameNumberOfTags numberOfDifferentTags = algorithmen.numberOfDifferentTags(image, imageToMatch);
 				if(numberOfDifferentTags.getNumberOfDifferentTags() > numberOfDifferentTagsToAnImage) {
-					bestMatch = imageToMatch;
+                    bestMatch = imageToMatch;
 					numberOfDifferentTagsToAnImage = numberOfDifferentTags.getNumberOfDifferentTags();
 				}
 			}
@@ -128,7 +138,13 @@ public class mainClass {
 			allSlideObjects.remove(bestMatch);
 		}
 		
-		System.out.println(slideShow);
+            SlideObject slide2Vertical = new SlideObject(image, bestMatch);
+            verticalImages.remove(image);
+            verticalImages.remove(bestMatch);
+            allSlideObjects.add(slide2Vertical);
+        }
+
+
 		
 		
 		
