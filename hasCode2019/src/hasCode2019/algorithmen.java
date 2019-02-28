@@ -36,10 +36,38 @@ public class algorithmen {
 		
 	}
 
-//	public Integer getScoreOfTwoObjects(Image image1, Image image2) {
+//	public Integer getScoreOfTwoObjects(SlideObject slideObject1, SlideObject slideObject2) {
 //		return numberOfDifferentTags(image1, image2);
 //
 //		Math.min(numberOfDifferentTags(image1,image2), numberOfSameTags(image1,image2));
 //	}
+//	
+	
+	public static int scoreOfTwoSlideObjects(SlideObject slideObject1, SlideObject slideObject2) {
+		int numberOfDifferentTag = 0;
+		int numberOfSameTag = 0;
+		if (slideObject1.getNumberOfTags() > slideObject2.getNumberOfTags()) {
+			outerLoop: for (int i = 0; i < slideObject1.getNumberOfTags(); i++) {
+				for (int j = 0; j < slideObject2.getNumberOfTags(); j++) {
+					if(slideObject1.getTags().get(i).equals(slideObject2.getTags().get(j))){
+						numberOfSameTag++;
+						continue outerLoop;
+					}
+				}
+				numberOfDifferentTag++;
+			}
+		} else {
+			outerLoop: for (int i = 0; i < slideObject2.getNumberOfTags(); i++) {
+				for (int j = 0; j < slideObject1.getNumberOfTags(); j++) {
+					if(slideObject2.getTags().get(i).equals(slideObject1.getTags().get(j))){
+						numberOfSameTag++;
+						continue outerLoop;
+					}
+				}
+				numberOfDifferentTag++;
+			}
+		}
+		return Math.min(numberOfDifferentTag, numberOfSameTag);
+	}
 
 }

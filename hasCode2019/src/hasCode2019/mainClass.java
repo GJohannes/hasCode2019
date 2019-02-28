@@ -104,7 +104,31 @@ public class mainClass {
 			allSlideObjects.add(slide2Vertical);
 		}
 		
+		Collections.sort(allSlideObjects);
 		
+		
+		
+		ArrayList<SlideObject> slideShow = new ArrayList<>();
+		
+		slideShow.add(allSlideObjects.get(0));
+		allSlideObjects.remove(0);
+		
+		
+		for(SlideObject slideObject : allSlideObjects) {
+			SlideObject bestMatch = null;
+			int bestScore = 0;
+			for(SlideObject slideObjectToMatch : allSlideObjects) {
+				int compareScore = algorithmen.scoreOfTwoSlideObjects(slideShow.get(slideShow.size()-1), slideObjectToMatch);
+				if(compareScore > bestScore) {
+					bestMatch = slideObjectToMatch;
+					bestScore = compareScore;
+				}
+			}
+			slideShow.add(bestMatch);
+			allSlideObjects.remove(bestMatch);
+		}
+		
+		System.out.println(slideShow);
 		
 		
 		
