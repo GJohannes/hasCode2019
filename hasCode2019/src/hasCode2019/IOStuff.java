@@ -1,6 +1,7 @@
 package hasCode2019;
 
-import java.io.IOException;
+import java.io.*;
+import java.lang.reflect.Array;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -54,5 +55,26 @@ public class IOStuff {
             System.exit(1);
         }
         return images;
+	}
+
+	public static void writeFiles(ArrayList<SlideObject>  listOfSlideObjects) throws IOException {
+
+    	String path = "hashCode2019/output/out.txt";
+
+
+		File fout = new File(path);
+		FileOutputStream fos = new FileOutputStream(fout);
+
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
+
+		bw.write(listOfSlideObjects.size());
+
+		for (int i = 0; i < listOfSlideObjects.size(); i++) {
+			bw.newLine();
+			bw.write(listOfSlideObjects.get(i).toString());
+		}
+
+		bw.close();
+
 	}
 }
