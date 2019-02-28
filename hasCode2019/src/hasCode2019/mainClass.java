@@ -63,11 +63,12 @@ public class mainClass {
 
 	public static void main(String[] args) {
 		System.out.println("standart syso");
-//		System.out.println(IOStuff.loadMainInputFile());
+		//System.out.println(IOStuff.loadMainInputFile());
+		readImages();
 		
 		
 		
-		ArrayList<Image> ioImages = new ArrayList<>();
+		List<Image> ioImages = images;
 		ArrayList<Image> verticalImages = new ArrayList<Image>();
 		
 		
