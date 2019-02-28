@@ -76,7 +76,7 @@ public class mainClass {
 		}
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		System.out.println("standart syso");
 		readImages();
 
@@ -165,6 +165,8 @@ public class mainClass {
 		System.out.println("done");
 
 		System.out.println(slideShow);
+		
+		IOStuff.writeFiles(slideShow);
 	}
 
 }

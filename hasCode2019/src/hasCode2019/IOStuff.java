@@ -1,7 +1,11 @@
 package hasCode2019;
 
-import java.io.*;
-import java.lang.reflect.Array;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -59,25 +63,41 @@ public class IOStuff {
 
 	public static void writeFiles(ArrayList<SlideObject>  listOfSlideObjects) throws IOException {
 
-        String path = "hashCode2019/output/out.txt";
+		File file = new File("newOut");
+		FileWriter fileWriter = new FileWriter(file);
+		BufferedWriter writer = new BufferedWriter(fileWriter);
+		for (int i = 0; i < listOfSlideObjects.size(); i++) {
+			 for(Image image: listOfSlideObjects.get(i).images){
+				 System.out.println(image.getId());
+				 writer.write(Integer.toString(image.getId()) + " ");
+	            }
+			 writer.newLine();	
+		}
 
-		File fout = new File(path);
-		FileOutputStream fos = new FileOutputStream(fout);
-
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
-
-		bw.write(listOfSlideObjects.size());
-
-        for (SlideObject listOfSlideObject : listOfSlideObjects) {
-            bw.newLine();
-            for(Image image: listOfSlideObject.images){
-                bw.write(image.getId());
-                bw.write(" ");
-            }
-
-        }
-
-		bw.close();
+		// file does not already exist
+		writer.flush();
+		writer.close();
+//		
+//		
+//        String path = "out.txt";
+//
+//		File fout = new File(path);
+//		FileOutputStream fos = new FileOutputStream(fout);
+//
+//		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
+//
+//		bw.write(listOfSlideObjects.size());
+//
+//        for (SlideObject listOfSlideObject : listOfSlideObjects) {
+//            bw.newLine();
+//            for(Image image: listOfSlideObject.images){
+//                bw.write(image.getId());
+//                bw.write(" ");
+//            }
+//
+//        }
+//
+//		bw.close();
 
 	}
 }
