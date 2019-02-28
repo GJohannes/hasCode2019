@@ -119,10 +119,10 @@ public class mainClass {
 			}
 			System.out.println(bestMatch);
 			System.out.println(image);
-			if(bestMatch != null) {
+			if(bestMatch != null && !removedImages.contains(image) && !removedImages.contains(bestMatch)) {
 				SlideObject slide2Vertical = new SlideObject(image, bestMatch);
 				removedImages.add(image);
-				removedImages.add((bestMatch));
+				removedImages.add(bestMatch);
 				
 //				verticalImages.remove(image);
 //				verticalImages.remove(bestMatch);
@@ -164,7 +164,7 @@ public class mainClass {
 
 		System.out.println("done");
 
-		System.out.println(slideShow);
+		//System.out.println(slideShow);
 		
 		IOStuff.writeFiles(slideShow);
 	}
