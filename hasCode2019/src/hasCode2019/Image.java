@@ -2,7 +2,7 @@ package hasCode2019;
 
 import java.util.ArrayList;
 
-public class Image {
+public class Image implements Comparable<Image> {
 	private Orientation orientation;
 	private ArrayList<String> tags;
 	private int numberOfTags;
@@ -35,6 +35,17 @@ public class Image {
 
 	public void setNumberOfTags(int numberOfTags) {
 		this.numberOfTags = numberOfTags;
+	}
+
+	@Override
+	public int compareTo(Image image) {
+		if(this.numberOfTags > image.getNumberOfTags()) {
+			return -1;
+		} else if(this.numberOfTags<image.getNumberOfTags()) {
+			return 1;
+		} else {
+			return 0;
+		}
 	}
 	
 	
