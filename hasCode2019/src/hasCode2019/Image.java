@@ -12,6 +12,30 @@ public class Image {
 		this.tags= tags;
 		this.numberOfTags = numberOfTags;
 	}
+
+	public Orientation getOrientation() {
+		return orientation;
+	}
+
+	public void setOrientation(Orientation orientation) {
+		this.orientation = orientation;
+	}
+
+	public ArrayList<String> getTags() {
+		return tags;
+	}
+
+	public void setTags(ArrayList<String> tags) {
+		this.tags = tags;
+	}
+
+	public int getNumberOfTags() {
+		return numberOfTags;
+	}
+
+	public void setNumberOfTags(int numberOfTags) {
+		this.numberOfTags = numberOfTags;
+	}
 	
 	
 }
